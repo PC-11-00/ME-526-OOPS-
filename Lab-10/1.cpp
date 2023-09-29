@@ -29,40 +29,28 @@ q.push(adj[u][i]);
 }*/
 
 #define ll long long
-
+class emplopyee
+{
+public:
+    int id;
+    string name;
+    int basicSalary;
+    int hra;
+    int da;
+    int ta;
+    int salary;
+};
 void sol()
 {
-    int n = 2, m = 2;
-
-    vector<vector<int>> arr(n, vector<int>(m));
-    vector<vector<int>> arr2(n, vector<int>(m));
-    cout << "Enter the First matrix" << endl;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            /* code */
-            cin >> arr[i][j];
-        }
-    }
-    cout << "Enter the Second matrix" << endl;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            /* code */
-            cin >> arr2[i][j];
-        }
-    }
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            /* code */
-            cout << arr[i][j] + arr2[i][j] << " ";
-        }
-        cout << endl;
-    }
+    emplopyee e1;
+    e1.name = "Pushpendra";
+    e1.basicSalary = 10000;
+    e1.hra = 0.18 * e1.basicSalary;
+    e1.da = 0.07 * e1.basicSalary;
+    e1.ta = 0.03 * e1.basicSalary;
+    e1.salary = e1.basicSalary + e1.hra + e1.da + e1.ta;
+    cout<<"Employee basic Salary: "<<e1.basicSalary<<endl;
+    cout<<"Employee Salary: "<<e1.salary<<endl;
 }
 
 int main()

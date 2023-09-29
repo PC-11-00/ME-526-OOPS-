@@ -30,18 +30,17 @@ q.push(adj[u][i]);
 
 #define ll long long
 
+void square(int *num)
+{
+    *num = *num * *num;
+}
 void sol()
 {
     int n;
     cin >> n;
-    vector<int> arr(n);
-    int mx = INT_MIN;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-        mx = max(arr[i], mx);
-    }
-    cout << mx << endl;
+    int *alpha = &n;
+    square(alpha);
+    cout << *alpha << endl;
 }
 
 int main()
@@ -49,7 +48,7 @@ int main()
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    int t = 1;
+    int t=1;
     // cin >> t;
 
     while (t--)

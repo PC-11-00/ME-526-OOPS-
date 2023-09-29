@@ -30,18 +30,28 @@ q.push(adj[u][i]);
 
 #define ll long long
 
+class student
+{
+public:
+    int id;
+    string name;
+    int marks;
+
+    void print()
+    {
+        cout << id << endl;
+        cout << name << endl;
+        cout << marks << endl;
+    }
+};
 void sol()
 {
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    int mx = INT_MIN;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-        mx = max(arr[i], mx);
-    }
-    cout << mx << endl;
+    student s1;
+    s1.id = 30;
+    s1.name = "Pushpendra";
+    s1.marks=40;
+    s1.print();
+    
 }
 
 int main()
@@ -49,7 +59,7 @@ int main()
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    int t = 1;
+    int t=1;
     // cin >> t;
 
     while (t--)

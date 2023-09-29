@@ -29,53 +29,22 @@ q.push(adj[u][i]);
 }*/
 
 #define ll long long
-int check(vector<vector<int>> arr)
-{
-    int n = 3, m = 3;
-    for (int i = 0; i < 3; i++)
-    {
-        int sum = accumulate(arr[i].begin(), arr[i].end(), -1);
 
-    }
-}
 void sol()
 {
-    int n = 3, m = 3;
-
-    vector<vector<int>> arr(n, vector<int>(m, -1));
-    int flag = 0;
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    vector<int>odd;
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < m; j++)
-        {
-            if (flag == 0)
-            {
-                cout << "first player enter the indeices" << endl;
-                int x, y;
-                cin >> x >> y;
-                arr[i][j] = 1;
-                if (check(arr) == 1)
-                {
-                    cout << "first player won" << endl;
-                }
-                flag = 1;
-            }
-            else
-            {
-                cout << "second player enter the indeices" << endl;
-                int x, y;
-                cin >> x >> y;
-                arr[x][y] = 0;
-                if (check(arr) == 2)
-                {
-                    cout << "second player won" << endl;
-                }
-
-                flag = 0;
-            }
+        cin >> arr[i];
+        if(arr[i]%2){
+            odd.push_back(arr[i]);
         }
     }
-    cout << "No one won match is won" << endl;
+    
+
 }
 
 int main()
