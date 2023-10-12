@@ -23,6 +23,6 @@ public:
         cout << "Name: " << name << endl;
         cout << "StudentId: " << studentId << endl;
         cout << "Address: ";
-        address.display(); // Delegate address display to Address class's display method
+        address.display(); 
     }
 };

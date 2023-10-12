@@ -19,7 +19,7 @@ int main()
     const int n = 4;
     Student da[n - 1] = {
         Student("PC", Address("204", "IIT Mandi", "Himachal", "India")),
-        Student("Piyus", Address("203", "IIT Mandi", "Himachal", "India")),
+        Student("Piyush", Address("203", "IIT Mandi", "Himachal", "India")),
         Student("Guru", Address("209", "IIT Mandi", "Himachal", "India"))};
     for (int i = 0; i < n - 1; i++)
     {
