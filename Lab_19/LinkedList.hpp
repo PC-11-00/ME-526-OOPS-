@@ -72,41 +72,69 @@ public:
         }
     }
 
-    void deleteAll()
+    void deleteAll(int data)
     {
-        Node *curr = head;
-        while (curr != NULL)
+        Node *current = head;
+        Node *previous = NULL;
+
+        while (current != NULL)
         {
-            Node *temp = curr;
-            curr = curr->next;
-            delete temp;
+            if (current->data == data)
+            {
+                if (previous == NULL)
+                {
+                    head = current->next;
+                }
+                else
+                {
+                    previous->next = current->next;
+                }
+
+                if (current == tail)
+                {
+                    tail = previous;
+                }
+
+                delete current;
+            }
+            previous = current;
+            current = current->next;
         }
-        head = NULL;
     }
-    void deleteLast()
+    void deleteLast(int data)
     {
 
-        Node *curr = head;
-        if (curr == NULL)
+        Node *current = head;
+        Node *previous = NULL;
+        Node *lastOccurrence = NULL;
+
+        while (current != NULL)
         {
-            cout << "List is Empty" << endl;
-            return;
+            if (current->data == data)
+            {
+                lastOccurrence = previous;
+            }
+            previous = current;
+            current = current->next;
         }
-        if (tail == NULL)
+
+        if (lastOccurrence != NULL)
         {
-            Node *temp = curr;
-            curr = NULL;
+            current = lastOccurrence->next;
+            lastOccurrence->next = current->next;
+            delete current;
+        }
+        else if (head != NULL && head->data == data)
+        {
+            Node *temp = head;
+            head = head->next;
             delete temp;
-            return;
         }
-        while (curr->next != tail)
+
+        if (tail != NULL && tail->data == data)
         {
-            curr = curr->next;
+            tail = lastOccurrence;
         }
-        Node *temp = tail;
-        tail = curr;
-        curr->next = NULL;
-        delete temp;
     }
 
     void reverse()
